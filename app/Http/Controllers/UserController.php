@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
@@ -116,7 +115,7 @@ class UserController extends Controller
         if ($request->roles) {
             $user->assignRole($request->roles);
         }
-        Session::flash('success', 'User Create Successfully');
+        Session::flash('success', 'User Updated Successfully');
         return redirect()->route('admin.user.index');
     }
 
@@ -132,7 +131,7 @@ class UserController extends Controller
         if (!is_null($user)) {
             $user->delete();
         }
-        Session::flash('success', 'User Create Successfully');
+        Session::flash('success', 'User Deleted Successfully');
         return redirect()->route('admin.user.index');
     }
 }
