@@ -21,9 +21,16 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('admin.role.index') }}">
+            <li class=" nav-item {{ Request::routeIs('admin.role.index') ? 'active' : '' }}"><a
+                    class="d-flex align-items-center" href="{{ route('admin.role.index') }}">
                     <i data-feather='shield'></i>
-                    <span class="menu-title text-truncate" data-i18n="Kanban">User Access</span></a></li>
+                    <span class="menu-title text-truncate" data-i18n="Kanban">User Access</span></a>
+            </li>
+            <li class=" nav-item {{ Request::routeIs('admin.user.index') ? 'active' : '' }}"><a
+                    class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
+                    <i data-feather='user'></i>
+                    <span class="menu-title text-truncate" data-i18n="Kanban">User Control</span></a>
+            </li>
         </ul>
     </div>
 </div>
